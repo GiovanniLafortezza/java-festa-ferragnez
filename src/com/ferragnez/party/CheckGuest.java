@@ -24,10 +24,17 @@ public class CheckGuest {
         System.out.println("Inserire nome invitato");
         String nameGuest = scanner.nextLine();
 
-        for (int i = 0; i < listGuests.length; i++) {
+        boolean found = false;
+        for (int i = 0; i < listGuests.length && !found; i++) {
             if(nameGuest.equals(listGuests[i])) {
-
+                found = true;
             }
+        }
+
+        if (found) {
+            System.out.println("Puoi Entrare!!!");
+        } else {
+            System.out.println("Mi dispiace non puoi entrare :(");
         }
         scanner.close();
     }
